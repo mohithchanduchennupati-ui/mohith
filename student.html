@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Student Information System</title>
+    <style>
+        body { font-family: Arial, Helvetica, sans-serif; background: #f2f2f2; }
+        .box { width: 420px; margin: 40px auto; background: #fff; padding: 24px; border-radius: 10px; box-shadow: 0 4px 14px rgba(0,0,0,0.08); }
+        label { display:block; margin-top:12px; font-weight:600; }
+        input, select { width:100%; padding:10px; margin-top:6px; border-radius:6px; border:1px solid #ccc; box-sizing:border-box; }
+        button { width:100%; padding:10px; margin-top:16px; border:none; background:#007bff; color:#fff; font-size:16px; border-radius:6px; cursor:pointer; }
+        button.secondary { background: #28a745; }
+        button:hover { opacity:0.95; }
+        h2 { text-align:center; margin:0 0 8px 0; }
+        .note { font-size:13px; color:#555; text-align:center; margin-top:12px; }
+        .row { display:flex; gap:8px; }
+        @media (max-width:480px){ .box{width:92%;} }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <h2>Student Registration</h2>
+
+        <form id="studentForm" action="student.php" method="POST" novalidate>
+            <label for="name">Full Name</label>
+            <input id="name" type="text" name="name" placeholder="John Doe" required>
+
+            <label for="roll">Roll Number</label>
+            <input id="roll" type="text" name="roll" placeholder="e.g. 2025CS101" required>
+
+            <label for="department">Department</label>
+            <input id="department" type="text" name="department" placeholder="Computer Science" required>
+
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" placeholder="name@example.com" required>
+
+            <div id="formErrors" style="color:#b00020; margin-top:10px; display:none;"></div>
+
+            <button id="submitBtn" type="submit">Register Student</button>
+        </form>
+
+        <div class="note">Or view all registrations</div>
+        <a href="display.php" style="text-decoration:none;"><button type="button" class="secondary">View All Students</button></a>
+    </div>
+
+    <script src="assets/js/app.js"></script>
+</body>
+</html>

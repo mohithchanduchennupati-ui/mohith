@@ -1,0 +1,12 @@
+-- SQL script to create database and students table
+CREATE DATABASE IF NOT EXISTS student_system CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+USE student_system;
+
+CREATE TABLE IF NOT EXISTS students (
+  id INT UNSIGNED NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  roll VARCHAR(100) NOT NULL,
+  department VARCHAR(200) NOT NULL,
+  email VARCHAR(255) NOT NULL,
+  created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
